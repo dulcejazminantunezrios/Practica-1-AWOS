@@ -19,6 +19,8 @@ class CreateComentariosTable extends Migration
             $table->text("cuerpo");
             $table->unsignedBigInteger("producto_id");
             $table->foreign('producto_id')->references('id')->on('productos');
+            $table->unsignedBigInteger("persona_id");
+            $table->foreign('persona_id')->references('id')->on('personas');
             $table->timestamps();
         });
     }
