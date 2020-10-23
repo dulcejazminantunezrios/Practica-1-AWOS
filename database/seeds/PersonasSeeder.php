@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use App\modelos\personas;
 
 class PersonasSeeder extends Seeder
 {
@@ -20,5 +23,6 @@ class PersonasSeeder extends Seeder
               'edad'=>rand(1,99),
           ]);
         }
+       // factory(personas::class, 99)->create();
     }
 }

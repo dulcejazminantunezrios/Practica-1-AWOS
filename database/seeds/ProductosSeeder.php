@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\modelos\productos;
 
 class ProductosSeeder extends Seeder
 {
@@ -22,5 +23,6 @@ class ProductosSeeder extends Seeder
               'precio' => rand(1,1000),
           ]);
         }
+        //factory(productos::class, 99)->create();
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use App\modelos\comentarios;
 
 class ComentariosSeeder extends Seeder
 {
@@ -20,5 +23,6 @@ class ComentariosSeeder extends Seeder
               'persona_id' => rand(1,20),
           ]);
         }
+       // factory(comentarios::class, 99)->create();
     }
 }
