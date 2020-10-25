@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\modelos\comentarios;
+use Faker\Factory as Faker;
 
 class ComentariosSeeder extends Seeder
 {
@@ -14,15 +15,14 @@ class ComentariosSeeder extends Seeder
      */
     public function run()
     {
-        $regis_c = range(0,20);
-        foreach ($regis_c as $valor) {
-          DB::table('comentarios')->insert([	            
-              'titulo' => Str::random(10),
-              'cuerpo' => Str::random(100),
-              'producto_id' => rand(1,20),
-              'persona_id' => rand(1,20),
-          ]);
+        $faker = Faker::create();
+        foreach(range(1,20) as $i){
+            DB::table('comentarios')->insert([
+                'titulo'=>$faker->sentence(2),
+                'cuerpo'=>$faker->text(150),
+                'producto_id'=>$faker->numberBetween(1,20),
+                'persona_id'=>$faker->numberBetween(1,20),
+            ]);
         }
-       // factory(comentarios::class, 99)->create();
     }
 }

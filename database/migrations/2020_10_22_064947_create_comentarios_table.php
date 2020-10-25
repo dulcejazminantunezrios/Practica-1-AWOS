@@ -15,7 +15,7 @@ class CreateComentariosTable extends Migration
     {
         Schema::create('comentarios', function (Blueprint $table) {
             $table->id();
-            $table->string("titulo",20);
+            $table->string("titulo",80);
             $table->text("cuerpo");
             $table->unsignedBigInteger("producto_id");
             $table->foreign('producto_id')->references('id')->on('productos');
